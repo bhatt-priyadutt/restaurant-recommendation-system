@@ -9,3 +9,7 @@ MarkupSafe==2.1.1
 Werkzeug==2.1.2
 zipp==3.8.1
 joblib
+sentence-transformers
+geopy
+pandas
+numpy
