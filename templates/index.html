@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      </head>
+    <body style="background-color:rgb(255, 175, 55);">
+        <center><h1 style="background:darkcyan; color:white; padding:10px 20px;">Restaurant Recommendation System</h1></center>
+        <center>
+        <h3>Confused about what to eat? Where to eat? All are having different preferences.<br />
+            Come and tell me your mood, I will recommend who will be good for your food</h3>
+            <br /><br />
+    <div class="container">
+        <form method ="POST">
+            <div class="form-group">
+        <label style="color:white;font-size:30px;" for="input_preference" >Input your preferences:</label> <br />
+        <input style="width: 40%;height: 40px;" type="text" name="input_preference"><br /><br />
+            </div>
+                <div class="form-group">
+        <button type="submit" class="btn btn-default">Recommend</button> </div>
+        </form>
+        </div>
+        <h3>{{ prediction_text }}</h3>
+        </center>
+        
+    </body>
+
+</html>
