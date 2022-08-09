@@ -6,27 +6,55 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+.text{
+border: none;
+  border-radius: 4px;
+  background-color: lightgray;
+  width: 40%;height: 40px;
+}
+.button {
+  display: inline-block;
+  padding: 15px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  background-color: lightgray;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: lightblue}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
 </head>
-<body style="background-color:rgb(255, 175, 55);">
-<center><h1 style="background:darkcyan; color:white; padding:10px 20px;">Restaurant Recommendation System</h1></center>
+<body style="background-image: url('background.png');">
+<center><h1 style=" color:white;  margin-top: 1px; border: 10px solid transparent; font-family:verdana;">Group-based Restaurant Recommendation System</h1></center>
 <center>
-    <h3>Confused about what to eat? Where to eat? All are having different preferences.<br/>
-        Come and tell me your mood, I will recommend who will be good for your food</h3>
-    <br/><br/>
-    <div class="container">
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+    <div class="absolute">
         <form method="POST" id="form">
             <div class="form-group">
                 <label style="color:white;font-size:30px;" for="input_cuisines">Input your cuisine preferences:</label>
                 <br/>
-                <input style="width: 40%;height: 40px;" type="text" name="input_cuisines" required><br/><br/>
+                <input class ="text" type="text" name="input_cuisines" required><br/><br/>
             </div>
             <div class="form-group">
                 <div class="form-group">
                     <label style="color:white;font-size:30px;" for="user_location">Input your Location:</label> <br/>
-                    <input style="width: 40%;height: 40px;" type="text" name="user_location" required><br/><br/>
+                    <input class ="text" type="text" name="user_location" required><br/><br/>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-default">Recommend</button>
+                    <button type="submit" class="button">Recommend</button>
                 </div>
             </div>
         </form>
@@ -37,71 +65,3 @@
 </body>
 
 </html>
-
-<!--<script type="text/javascript">-->
-<!--    var json_res = {}-->
-<!--    $(document).ready(function() {-->
-<!--    //#addLinkForm is nothing but the id of the form (works well if you have multiple forms in your page)-->
-<!--        $('#addLinkForm').on('submit',function(event){-->
-<!--    //This is where the data is sent-->
-<!--        $.ajax({-->
-<!--            url: '/adminAJAX',-->
-<!--            type: 'POST',-->
-<!--            data: $('#addLink'),-->
-<!--        })-->
-<!--    //this is done when the response is received-->
-<!--        .done(function(data) {-->
-<!--            console.log("success " + data);-->
-<!--        });-->
-
-<!--        event.preventDefault();-->
-<!--    });-->
-<!--    });-->
-<!--    convertJsontoHtmlTable();-->
-<!--    function convertJsontoHtmlTable()-->
-<!--    {-->
-
-<!--        //Getting value for table header-->
-<!--        // {'EmployeeID', 'EmployeeName', 'Address' , 'City','Country'}-->
-<!--        var tablecolumns = [];-->
-<!--        for (var i = 0; i < employess.length; i++) {-->
-<!--            for (var key in employess[i]) {-->
-<!--                if (tablecolumns.indexOf(key) === -1) {-->
-<!--                    tablecolumns.push(key);-->
-<!--                }-->
-<!--            }-->
-<!--        }-->
-
-<!--        //Creating html table and adding class to it-->
-<!--        var tableemployee = document.createElement("table");-->
-<!--        tableemployee.classList.add("table");-->
-<!--        tableemployee.classList.add("table-striped");-->
-<!--        tableemployee.classList.add("table-bordered");-->
-<!--        tableemployee.classList.add("table-hover")-->
-
-<!--        //Creating header of the HTML table using-->
-<!--        //tr-->
-<!--        var tr = tableemployee.insertRow(-1);-->
-
-<!--        for (var i = 0; i < tablecolumns.length; i++) {-->
-<!--            //header-->
-<!--            var th = document.createElement("th");-->
-<!--            th.innerHTML = tablecolumns[i];-->
-<!--            tr.appendChild(th);-->
-<!--        }-->
-
-<!--        // Add employee JSON data in table as tr or rows-->
-<!--        for (var i = 0; i < employess.length; i++) {-->
-<!--            tr = tableemployee.insertRow(-1);-->
-<!--            for (var j = 0; j < tablecolumns.length; j++) {-->
-<!--                var tabCell = tr.insertCell(-1);-->
-<!--                tabCell.innerHTML = employess[i][tablecolumns[j]];-->
-<!--            }-->
-<!--        }-->
-
-<!--        //Final step , append html table to the container div-->
-<!--        var employeedivcontainer = document.getElementById("employeedivcontainer");-->
-<!--        employeedivcontainer.innerHTML = "";-->
-<!--        employeedivcontainer.appendChild(tableemployee);-->
-<!--    }-->
-<!--</script>-->
