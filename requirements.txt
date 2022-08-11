@@ -13,3 +13,4 @@ sentence-transformers
 geopy
 pandas
 numpy
+plotly

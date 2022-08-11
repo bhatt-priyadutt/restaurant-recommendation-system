@@ -66,12 +66,12 @@ def predict():
         text_file = open("app/templates/response.html", "w", encoding="utf-8")
         text_file.write('<body background-color:white;>')
         if isinstance(res, pd.DataFrame):
-            res_html = res.to_html()
-            text_file.write(res_html + '<br/>')
+            #res_html = res.to_html()
+            #text_file.write(res_html + '<br/>')
+            text_file.write("<h2>Map is displayed with the restaurant recommendations</h2>")
         else:
             res = "<h1>" + res + "</h1>"
             text_file.write(res + '<br/>')
-        # write html to file
 
         if input_location_coor is None:
             text_file.write("input location coordinates are None")
@@ -126,7 +126,7 @@ def get_similar_cuisine(model, ic,
         cuis_score_dict['cuisines'] = cuis
         cuis_score_dict['scores'] = float(score)
         cuis_score_df = cuis_score_df.append(cuis_score_dict, ignore_index=True)
-    cuis_score_df = cuis_score_df[cuis_score_df['scores'] > 0.45]
+    cuis_score_df = cuis_score_df[cuis_score_df['scores'] > 0.5]
     if not cuis_score_df.empty:
         return list(cuis_score_df['cuisines'].values)
     else:
